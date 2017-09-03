@@ -2,6 +2,7 @@ import tensorflow.python.platform
 
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 # Global variables.
 NUM_LABELS = 2    # The number of labels.
@@ -129,6 +130,16 @@ def main(argv=None):
             print()
 
         print("Accuracy:", accuracy.eval(feed_dict={x: test_data, y_: test_labels}))
+
+        plt.title("Meditating")
+        plt.xlabel("x")
+        plt.ylabel("y")
+        # TODO:
+        # check plot data, these may not be the correct x. y values
+        # figure out how to draw line dividing 2 groups.
+        # can use tensorflow or tensorboard instead of matplotlib?
+        plt.scatter([test_data[:,0]],[test_data[:,1]])
+        plt.show()
 
 
 if __name__ == '__main__':
