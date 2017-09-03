@@ -93,7 +93,7 @@ def main(argv=None):
     # Create a local session to run this computation.
     with tf.Session() as s:
         # Run all the initializers to prepare the trainable parameters.
-        tf.initialize_all_variables().run()
+        tf.global_variables_initializer().run()
         if verbose:
             print('Initialized!')
             print()
